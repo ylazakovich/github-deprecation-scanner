@@ -1,0 +1,17 @@
+name: "Run tests"
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run Deprecation Scanner
+        uses: ./
+        with:
+          log_file: logs/sample.log

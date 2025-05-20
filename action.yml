@@ -1,0 +1,14 @@
+name: GitHub Deprecation Scanner
+description: Checks logs for deprecated usage and reports them as GitHub Actions warnings
+author: ylazakovich
+
+inputs:
+  log_file:
+    description: "Path to the log file to scan"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: ./entrypoint.sh "${{ inputs.log_file }}"
+      shell: bash

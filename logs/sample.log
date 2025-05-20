@@ -1,0 +1,6 @@
+[INFO] Starting server on port 8080
+[DEBUG] Loaded config file successfully
+[WARNING] This method is deprecated and will be removed in the next release
+[INFO] Connection established with database
+[WARNING] Deprecated API usage: com.old.library.OldClass
+[INFO] Service started successfully
