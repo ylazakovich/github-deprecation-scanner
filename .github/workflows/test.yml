@@ -14,4 +14,4 @@ jobs:
       - name: 🚀 Run Scanner
         uses: ./
         with:
-          log_file: ./github/logs/sample.log
+          log_file: logs/sample.log
