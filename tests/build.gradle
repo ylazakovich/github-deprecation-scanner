@@ -12,8 +12,6 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'checkstyle'
     apply plugin: 'com.github.spotbugs'
-    apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'org.springframework.boot'
 }
 
 apply from: 'gradle/compilation.gradle'

@@ -3,11 +3,6 @@ subprojects {
     encoding = 'UTF-8'
   }
 
-  bootJar {
-    enabled = true
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-  }
-
   jar {
     enabled = false
   }
