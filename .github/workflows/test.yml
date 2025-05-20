@@ -1,4 +1,4 @@
-name: "Run tests"
+name: "Action test"
 on:
   pull_request:
     branches: [main]
