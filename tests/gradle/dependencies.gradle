@@ -1,0 +1,34 @@
+ext {
+    lombok = '1.18.38'
+    mockito = '5.17.0'
+    assertJ = '3.27.3'
+    testng = '7.11.0'
+    aeonbits = "1.0.12"
+    slf4j = '2.0.17'
+    allure = '2.29.1'
+    awaitility = '4.3.0'
+    spotbugs_annotation = '4.9.3'
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+        maven {
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            mavenContent {
+                snapshotsOnly()
+            }
+        }
+    }
+
+    dependencies {
+        implementation("org.aeonbits.owner:owner:$aeonbits")
+        implementation("io.qameta.allure:allure-testng:$allure")
+        implementation("org.testng:testng:$testng")
+        testImplementation("org.assertj:assertj-core:$assertJ")
+        testImplementation("org.mockito:mockito-core:$mockito")
+        annotationProcessor("org.projectlombok:lombok:$lombok")
+        compileOnly("com.github.spotbugs:spotbugs-annotations:$spotbugs_annotation")
+        compileOnly("org.projectlombok:lombok:$lombok")
+    }
+}
