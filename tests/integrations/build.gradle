@@ -1,3 +1,7 @@
 ext {
     artifactId = 'integration'
 }
+
+dependencies {
+    implementation "org.zeroturnaround:zt-exec:${zt_exec}"
+}
