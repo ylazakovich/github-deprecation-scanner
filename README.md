@@ -1,2 +1,12 @@
-# github-deprecation-scanner
-A GitHub Action that scans logs for deprecated API usage, method calls, or messages, and reports them as warnings via GitHub Annotations. Works with any CI step that outputs logs. Helps detect outdated or soon-to-be removed features early, without breaking your workflow.
+## 🟡 Deprecation Scanner – GitHub Action
+
+This GitHub Action scans your logs for the word `deprecated` and highlights it using GitHub Actions warning annotations.
+
+It helps you:
+- Stay aware of outdated API usage
+- Catch early signs of obsolescence
+- Keep your pipelines green without ignoring problems
+
+🔧 Works with any log-producing step  
+✅ Doesn't fail the build  
+⚠️ Emits visible warnings in the Actions UI
