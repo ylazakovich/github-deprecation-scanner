@@ -10,13 +10,13 @@ import io.automation.models.ConstantFormat;
 import io.automation.models.SshPortForwardConfig;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.BooleanUtils;
 
 /**
  * Utils for ssh commands.
  */
-@Log4j2
+@Slf4j
 @UtilityClass
 public class SshUtils {
 
