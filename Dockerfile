@@ -5,10 +5,16 @@ RUN apt-get update && apt-get install -y \
     bash \
     && mkdir /var/run/sshd
 
-RUN useradd -ms /bin/bash testuser && echo "testuser:password" | chpasswd
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config && \
+    sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
 
-COPY entrypoint.sh /home/testuser/entrypoint.sh
-RUN chmod +x /home/testuser/entrypoint.sh
+COPY id_rsa.pub /root/.ssh/authorized_keys
+RUN chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys
+
+COPY entrypoint.sh /root/entrypoint.sh
+RUN chmod +x /root/entrypoint.sh
 
 EXPOSE 22
 
