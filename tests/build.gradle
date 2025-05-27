@@ -1,0 +1,23 @@
+plugins {
+    id 'checkstyle'
+    id 'com.github.spotbugs' version '6.1.11'
+}
+
+allprojects {
+    group = 'io.starter'
+    version = '1.0.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'checkstyle'
+    apply plugin: 'com.github.spotbugs'
+}
+
+apply from: 'gradle/compilation.gradle'
+apply from: 'gradle/code-analysis.gradle'
+apply from: 'gradle/dependencies.gradle'
+apply from: 'gradle/tests.gradle'
+apply from: 'gradle/aspectj.gradle'
+
+defaultTasks 'check'
