@@ -7,7 +7,8 @@ ext {
     spotbugs_annotation = '4.9.3'
     commons_lang3 = '3.17.0'
     commons_text = '1.13.0'
-    zt_exec = '1.12'
+    aeonbits = "1.0.12"
+    jcabi = '1.9.0'
 }
 
 subprojects {
@@ -22,6 +23,8 @@ subprojects {
     }
 
     dependencies {
+        implementation("com.jcabi:jcabi-ssh:${jcabi}")
+        implementation("org.aeonbits.owner:owner:${aeonbits}")
         implementation("io.qameta.allure:allure-testng:$allure")
         implementation("org.testng:testng:$testng")
         implementation("org.apache.commons:commons-lang3:${commons_lang3}")
