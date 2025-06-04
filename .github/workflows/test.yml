@@ -1,4 +1,4 @@
-name: "Action test"
+name: "Run Github Action"
 on:
   pull_request:
     branches: [main]
@@ -9,9 +9,9 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: 🔨Checkout code
         uses: actions/checkout@v4
-      - name: Run Deprecation Scanner
+      - name: 🚀 Run Scanner
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         uses: ./
-        with:
-          log_file: logs/sample.log

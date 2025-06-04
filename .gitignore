@@ -1,2 +1,17 @@
-.idea/
+build
+hs_err_pid*
+.idea/*
+!/.idea/icon.svg
+out
+*.ipr
+*.iws
 *.iml
+.gradle
+.project
+.classpath
+.settings
+classes
+
+# Ignore all binary files
+modules/*/bin
+statics/bin
