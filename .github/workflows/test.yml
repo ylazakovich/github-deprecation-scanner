@@ -12,6 +12,6 @@ jobs:
       - name: 🔨Checkout code
         uses: actions/checkout@v4
       - name: 🚀 Run Scanner
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         uses: ./
-        with:
-          log_file: logs/sample.log
